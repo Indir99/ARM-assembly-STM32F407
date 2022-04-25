@@ -11,40 +11,40 @@
 
 main:
 
-//Prvi slucaj X>10 - ocekujemo u registru R2 vrijednost R2=11
+//First case X > 10 - in R2 reg we expect value R2=11
 	mov r1,#15       // R1=15
 	mov r2,#0        // R2=0
-	CMP r1,#10		 // Poredimo vrijednost registra R1 sa 10 (mijenjamo flag-ove)
+	CMP r1,#10		 // Comparing R1 value with 10 (changing flags)
 
-	ITE GT           // IT blok
-	movgt r2,#11     // Ako je R1>10 linija koda ce biti izvrsena
-	movle r2,#9		 // Ako je R1<=10 linija koda ce biti izvrsena
+	ITE GT           // IT 
+	movgt r2,#11     // if(R1>10), execute
+	movle r2,#9		 // if(R1<=10), execute
 	IT EQ
-	moveq r2,#10 	 // Ako je R1=10 linija koda ce biti izvrsena
-// U registru R2 imamo vrijednost R2=11;
+	moveq r2,#10 	 // if(R1=10), execute
+// Result: R2=11;
 
 
-// Drugi slucaj X<10 - ocekujemo u registru R2 vrijednost R2=9
+// Second case X<10 - in R2 reg we expect value R2=9
 	mov r1,#7		// R1=7
 	mov r2,#0		// R2=0
-	CMP r1,#10		// Poredimo vrijednost registra R1 sa 10
+	CMP r1,#10		// Comparing R1 value with 10
 
-	ITE GT			// IT blok
-	movgt r2,#11	// Ako je R1>10 linija koda ce biti izvrsena
-	movle r2,#9		// Ako je R1<=10 linija koda ce biti izvrsena
+	ITE GT			// IT 
+	movgt r2,#11	// if(R1>10), execute
+	movle r2,#9		// if(R1<=10), execute
 	IT EQ
-	moveq r2,#10	//Ako je R1=10 linija koda ce biti izvrsena
-// U registru R2 imamo vrijednost R2=9;
+	moveq r2,#10	//if(R1=10), execute
+// Result R2=9;
 
-// Treci slucaj X=10 - ocekujemo u registru R2 vrijednost R2=10
-	mov r1,#10		// R1=7
+// Third case X=10 - in R2 reg we expect value R2=10
+	mov r1,#10		// R1=10
 	mov r2,#0		// R2=0
-	CMP r1,#10		// Poredimo vrijednost registra R1 sa 10
+	CMP r1,#10		// Comparing R1 value with 10
 
-	ITE GT			// IT blok
-	movgt r2,#11	// Ako je R1>10 linija koda ce biti izvrsena
-	movle r2,#9		// Ako je R1<=10 linija koda ce biti izvrsena
+	ITE GT			// IT 
+	movgt r2,#11	// if(R1>10), execute
+	movle r2,#9		// if(R1<=10), execute
 	IT EQ
-	moveq r2,#10	//Ako je R1=10 linija koda ce biti izvrsena
-// U registru R2 imamo vrijednost R2=10
+	moveq r2,#10	//if(R1=10), execute
+// Result: R2=10
 
